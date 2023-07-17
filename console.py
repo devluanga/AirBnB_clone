@@ -2,7 +2,6 @@
 """AirBNB console."""
 import cmd
 from shlex import split
-from models import storage
 from datetime import datetime
 from models.base_model import BaseModel
 from models.user import User
@@ -14,7 +13,7 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the command interpreter."""
+    """Command interpreter."""
 
     prompt = "(hbnb) "
     __classes = {
@@ -109,7 +108,7 @@ class HBNBCommand(cmd.Cmd):
         """Deletes an instance based on the class name and id
         Exceptions:
             SyntaxError: when there is no args given
-            NameError: when there is no object that has the name
+            NameError: when there is no object taht has the name
             IndexError: when there is no id given
             KeyError: when there is no valid id given
         """
@@ -138,7 +137,8 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
 
     def do_all(self, line):
-        """Display string representations of all instances of a given class.
+        """Usage: all or all <class> or <class>.all()
+        Display string representations of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
         if not line:
             o = storage.all()
@@ -159,7 +159,7 @@ class HBNBCommand(cmd.Cmd):
         """Updates an instanceby adding or updating attribute
         Exceptions:
             SyntaxError: when there is no args given
-            NameError: when there is no object that has the name
+            NameError: when there is no object taht has the name
             IndexError: when there is no id given
             KeyError: when there is no valid id given
             AttributeError: when there is no attribute given
