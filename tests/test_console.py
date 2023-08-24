@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""unit tests for console.py."""
+"""Defines unittests for console.py."""
 import os
 import pep8
 import unittest

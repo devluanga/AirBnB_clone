@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-"""AirBNB console."""
+"""Defines the HBNB console."""
 import cmd
 from shlex import split
+from models import storage
 from datetime import datetime
 from models.base_model import BaseModel
 from models.user import User
@@ -13,7 +14,7 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """Command interpreter."""
+    """Defines the HolbertonBnB command interpreter."""
 
     prompt = "(hbnb) "
     __classes = {
